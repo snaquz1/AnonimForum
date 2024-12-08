@@ -1,0 +1,26 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="{% static "Forum/css/main.css" %}">
+</head>
+<body>
+<nav>
+    <a href="/">Главная</a>
+    <a href="/boards">Доски</a>
+</nav>
+<hr>
+
+<h1>Добро пожаловать!</h1>
+<h2>Что нового?</h2>
+<div>
+{% for u in updates %}
+    <p>{{ u.date }} - {{ u.text }}</p>
+{% endfor %}
+<a href="/updates">Все обновления</a>
+</div>
+
+</body>
+</html>

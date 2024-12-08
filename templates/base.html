@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% block title %}{% endblock %}
+    {% block style %}{% endblock %}
+</head>
+<body>
+<nav>
+    <a href="/">Главная</a>
+    <a href="/boards">Доски</a>
+</nav>
+<hr>
+
+{% block body %}{% endblock %}
+</body>
+</html>
