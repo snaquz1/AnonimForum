@@ -3,7 +3,6 @@ from .models import *
 # Create your views here.
 def main(request):
     updates = Update.objects.all().order_by("-date")[:3]
-
     return render(request, "main.html", context={"updates": updates})
 
 def updates(request):
