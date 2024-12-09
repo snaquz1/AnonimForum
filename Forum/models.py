@@ -9,13 +9,13 @@ class Update(models.Model):
     date = models.DateField(default=datetime.date.today)
 
 class Board(models.Model):
-    uuid = models.UUIDField(default=uuid.uuid4, blank=False, unique=True, editable=False)
+    uuid = models.CharField(default=uuid.uuid4, blank=False, unique=True, editable=False, max_length=120)
     name = models.CharField(max_length=120)
     creation_date = models.DateField(default=datetime.date.today)
-    messages_uuids = models.TextField()
+    messages_uuids = models.TextField(blank=True)
 
 class Message(models.Model):
-    uuid = models.UUIDField(default=uuid.uuid4, blank=False, unique=True, editable=False)
+    uuid = models.CharField(default=uuid.uuid4, blank=False, unique=True, editable=False, max_length=120)
     datetime = models.DateTimeField(default=datetime.datetime.now)
     text = models.TextField()
 
