@@ -5,17 +5,26 @@
 {% block title %}Доска {{ board.name }}{% endblock %}
 
 {% block body %}
+    <img width="150" height="150" src="{{ board.image.url }}">
+    <h1>{{ board.name }}</h1>
+    <hr>
     {% for m in messages %}
         <div class="contextmenu-target-element message">
         <p>{{ m.text }}</p>
         <p class="message-datetime">{{ m.datetime }}</p>
         </div>
-    {% endfor %}
 
+        {% empty %}
+        <div class="contextmenu-target-element message">
+        <p>Здесь пока ничего нет</p>
+        <p class="message-datetime">1 мая 2077г. 11:11</p>
+        </div>
+    {% endfor %}
+<hr>
     <form method="post">
     {% csrf_token %}
-    {{ form }}
-    <input type="submit" value="отправить">
+    <textarea placeholder="Ваше сообщение" name="text" cols="40" rows="3" required="" id="id_text"></textarea>
+    <input id="submit_btn" type="submit" value="отправить">
     </form>
 
 
