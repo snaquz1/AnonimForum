@@ -16,7 +16,8 @@ body{
 .message{
     background: cadetblue;
     width: fit-content;
-    text-align: center;
+    height: fit-content;
+    text-align: left;
     align-items: center;
     border: 3px solid darkblue;
     margin-bottom: 10px;
@@ -31,6 +32,10 @@ body{
     text-align: right;
     font-size: 15px;
     padding-top: 30px ;
+}
+
+.message:hover{
+    background: lightblue;
 }
 
 #context-menu {

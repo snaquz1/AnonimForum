@@ -9,13 +9,12 @@
     <input type="text">
     <input type="submit" value="send">
     </form>
-    
     {% for b in boards %}
         <div>
+        <img width="50" height="50" src="{{b.image.url}}">
             <a href="/boards/{{ b.uuid }}">{{ b.name }}</a>
-            
-        
         </div>
+        <hr>
     {% endfor %}
     
 {% endblock %}

@@ -13,6 +13,7 @@ class Board(models.Model):
     name = models.CharField(max_length=120)
     creation_date = models.DateField(default=datetime.date.today)
     messages_uuids = models.TextField(blank=True)
+    image = models.ImageField(blank=True, upload_to="images/")
 
 class Message(models.Model):
     uuid = models.CharField(default=uuid.uuid4, blank=False, unique=True, editable=False, max_length=120)
