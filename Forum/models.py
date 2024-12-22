@@ -16,7 +16,7 @@ class Board(models.Model):
     image = models.ImageField(blank=True, upload_to="images/")
 
 class Message(models.Model):
-    board = models.ForeignKey(Board, on_delete=models.CASCADE, default=1)
+    board = models.ForeignKey(Board, on_delete=models.CASCADE)
     uuid = models.CharField(default=uuid.uuid4, blank=False, unique=True, editable=False, max_length=120)
     datetime = models.DateTimeField(default=datetime.datetime.now)
     text = models.TextField()

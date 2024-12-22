@@ -1,5 +1,5 @@
 from django.http import HttpResponse, HttpResponseRedirect
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from .models import *
 from .forms import *
 # Create your views here.
@@ -20,11 +20,7 @@ def boardbyuuid(request, board_uuid):
     if request.method == "POST":
         form = MessageForm(request.POST)
         if form.is_valid():
-            message = Message.objects.create(text=form.cleaned_data["text"])
-            message.save()
-            board = Board.objects.get(uuid=board_uuid)
-            board.messages_uuids += f"{message.uuid}, "
-            board.save()
+            Message.objects.create(board=get_object_or_404(Board, uuid=board_uuid), text=form.cleaned_data["text"]).save()
             return HttpResponseRedirect(f"/boards/{board_uuid}")
 
     else:
