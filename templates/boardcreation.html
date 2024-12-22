@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Создание доски{% endblock %}
+{% block style %}
+    <link rel="stylesheet" href="{% static 'Forum/css/main.css' %}">
+{% endblock %}
+
+{% block body %}
+    <form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <input type="hidden" name="csrfmiddlewaretoken" value="pMqIqoiBovYK79f8SaAukOe9USfpHhc1QiR6FJ7oTPjJ2iqQc8V7DJYffuRc7JHU">
+    <p>
+    <label for="id_name">Name:</label>
+    <input type="text" name="name" maxlength="120" required id="id_name">
+  </p>
+  <p>
+    <label for="id_image">Image:</label>
+    <input type="file" name="image" id="id_image">
+  </p>
+    <input type="submit" value="send">
+    </form>
+{% endblock %}

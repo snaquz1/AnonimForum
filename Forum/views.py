@@ -34,3 +34,17 @@ def boardbyuuid(request, board_uuid):
     return render(request, "board.html", context={"form": form, "board": board, "messages": messages})
 
 
+def boardaction(request, action):
+    if request.method == "POST" and action == "create":
+        form = BoardCreationForm(request.POST, request.FILES)
+        if form.is_valid():
+            Board.objects.create(
+                name=form.cleaned_data["name"],
+                image=form.cleaned_data["image"]
+            ).save()
+            return redirect("/boards")
+
+    else:
+        if action == "create":
+            form = BoardCreationForm()
+            return render(request, "boardcreation.html", context={"form": form})
