@@ -5,9 +5,9 @@
 {% block title %}Доска {{ board.name }}{% endblock %}
 
 {% block body %}
-    <img width="150" height="150" src="{{ board.image.url }}">
+    <img border="2px solid white" width="150" height="150" src="{{ board.image.url }}">
     <h1>{{ board.name }}</h1>
-    <hr>
+    <hr class="styled-hr">
     {% for m in messages %}
         <div class="contextmenu-target-element message">
         <p class="message-text">{{ m.text }} <p class="message-datetime">{{ m.datetime }}</p></p>
@@ -16,11 +16,11 @@
 
         {% empty %}
         <div class="contextmenu-target-element message">
-        <p>Здесь пока ничего нет</p>
-        <p class="message-datetime">1 мая 2077г. 11:11</p>
+        <p>Здесь пока что ничего нет?</p>
+        <p class="message-datetime">256 августа 2077г. 11:11</p>
         </div>
     {% endfor %}
-<hr>
+<hr class="styled-hr">
     <form method="post">
     {% csrf_token %}
     <textarea placeholder="Ваше сообщение" name="text" cols="40" rows="3" required="" id="id_text"></textarea>

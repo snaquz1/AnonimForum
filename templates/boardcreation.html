@@ -3,19 +3,21 @@
 {% block title %}Создание доски{% endblock %}
 {% block style %}
     <link rel="stylesheet" href="{% static 'Forum/css/main.css' %}">
+    <link rel="stylesheet" href="{% static 'Forum/css/createboard.css' %}">
 {% endblock %}
 
 {% block body %}
+    <h1>Создание новой доски</h1>
     <form method="post" enctype="multipart/form-data">
     {% csrf_token %}
     <input type="hidden" name="csrfmiddlewaretoken" value="pMqIqoiBovYK79f8SaAukOe9USfpHhc1QiR6FJ7oTPjJ2iqQc8V7DJYffuRc7JHU">
     <p>
-    <label for="id_name">Name:</label>
+    <label for="id_name">Имя доски:</label>
     <input type="text" name="name" maxlength="120" required id="id_name">
   </p>
   <p>
-    <label for="id_image">Image:</label>
-    <input type="file" name="image" id="id_image">
+    <label for="id_image">Обложка доски:</label>
+    <input required type="file" name="image" id="id_image">
   </p>
     <input type="submit" value="send">
     </form>

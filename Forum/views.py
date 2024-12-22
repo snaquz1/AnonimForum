@@ -22,7 +22,8 @@ def boardbyuuid(request, board_uuid):
         if form.is_valid():
             Message.objects.create(board=get_object_or_404(Board, uuid=board_uuid), text=form.cleaned_data["text"]).save()
             return HttpResponseRedirect(f"/boards/{board_uuid}")
-
+        else:
+            return HttpResponse(form.errors)
     else:
         form = MessageForm()
         board = Board.objects.get(uuid=board_uuid)
