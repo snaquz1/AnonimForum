@@ -30,8 +30,7 @@ def boardbyuuid(request, board_uuid):
     else:
         form = MessageForm()
         board = Board.objects.get(uuid=board_uuid)
-        messages_uuids = board.messages_uuids.split(", ")
-        messages = Message.objects.filter(uuid__in=messages_uuids).order_by("datetime")
+        messages = Message.objects.filter(board_id=board.id)
     return render(request, "board.html", context={"form": form, "board": board, "messages": messages})
 
 

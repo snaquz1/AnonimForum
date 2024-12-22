@@ -2,10 +2,12 @@ a{
     font-size: 20px;
     color: #2AA8DE;
     text-decoration: none;
+    transition: background 0.3s ease, transform 0.3s ease;
 }
 
 a:hover{
     color: #015F87;
+    transform: scale(1.15);
 }
 
 body{
@@ -42,7 +44,7 @@ body{
 
 .message:hover {
     background: #00326B; /* Darker background on hover */
-    transform: translateY(-5px); /* Lift effect on hover */
+    transform: translateY(-5px) scale(1.01) ; /* Lift effect on hover */
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* Enhanced shadow on hover */
 }
 

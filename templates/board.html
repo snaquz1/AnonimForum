@@ -10,8 +10,8 @@
     <hr>
     {% for m in messages %}
         <div class="contextmenu-target-element message">
-        <p>{{ m.text }}</p>
-        <p class="message-datetime">{{ m.datetime }}</p>
+        <p class="message-text">{{ m.text }} <p class="message-datetime">{{ m.datetime }}</p></p>
+        
         </div>
 
         {% empty %}
@@ -30,8 +30,8 @@
 
     <div id="context-menu">
     <ul>
-        <li onclick="alert('Первый пункт')">Первый пункт</li>
-        <li onclick="alert('Второй пункт')">Второй пункт</li>
+        <li onclick="MainFunction(`Первый пункт`)">Копировать текст</li>
+        <li onclick="MainFunction(`Второй пункт`)">Цитировать</li>
         <li onclick="alert('Третий пункт')">Третий пункт</li>
     </ul>
 </div>
