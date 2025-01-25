@@ -1,6 +1,9 @@
     const targetElements = document.querySelectorAll('.contextmenu-target-element');
     const contextMenu = document.getElementById('context-menu');
     const textInput = document.getElementById("id_text");
+    const submitBtn = document.getElementById("submit_btn");
+
+    window.scrollTo(0, document.body.scrollHeight)
 
 function MainFunction(event){
     if (event === "Первый пункт"){
@@ -10,6 +13,12 @@ function MainFunction(event){
         textInput.focus()
     }
 }
+
+textInput.addEventListener("keyup", function (){
+    if (event.keyCode === 13){
+        submitBtn.click()
+    }
+})
 
 
 function OpenMenu(){
@@ -29,3 +38,4 @@ function OpenMenu(){
     window.addEventListener('click', function() {
         contextMenu.style.display = 'none'; // Скрываем меню при клике вне его
     });
+

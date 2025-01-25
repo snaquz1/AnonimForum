@@ -1,0 +1,134 @@
+a{
+    font-size: 20px;
+    color: #2AA8DE;
+    text-decoration: none;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+a:hover{
+    color: #015F87;
+    transform: scale(1.15);
+}
+
+body{
+    align-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    background-color: #001226;
+}
+
+.message {
+    background: #002C5F; /* Base background color */
+    width: fit-content; /* Fit content width */
+    height: fit-content; /* Fit content height */
+    text-align: left; /* Align text to the left */
+    align-items: center; /* Center items vertically */
+    border: 3px solid darkblue; /* Border color */
+    margin-bottom: 10px; /* Space below the message */
+    padding: 10px; /* Padding inside the message */
+    font-size: 17px; /* Font size */
+    display: flex; /* Flexbox layout */
+    flex-direction: row; /* Row direction */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+    transition: background 0.3s ease, transform 0.3s ease; /* Smooth transition for background and transform */
+}
+
+.message-datetime {
+    text-align: right; /* Align datetime text to the right */
+    font-size: 15px; /* Font size for datetime */
+    padding-top: 30px; /* Space above datetime */
+    color: #A9A9A9; /* Lighter color for datetime */
+}
+
+.message:hover {
+    background: #00326B; /* Darker background on hover */
+    transform: translateY(-5px) scale(1.01) ; /* Lift effect on hover */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* Enhanced shadow on hover */
+}
+
+.message:active {
+    transform: translateY(0); /* Reset lift effect when clicked */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Reset shadow */
+}
+#id_text{
+    background: #2b2b2b;
+    color: white;
+    font-size: 20px;
+}
+
+#id_text:focus{
+    box-shadow: 0 0 50px #07458a; /* добавляем легкую тень */
+}
+#submit_btn{
+    background-color: #4CAF50; /* Green background */
+    border: none; /* Remove borders */
+    color: white; /* White text */
+    padding: 15px 32px; /* Some padding */
+    text-align: center; /* Centered text */
+    text-decoration: none; /* No underline */
+    display: inline-block; /* Make the button inline */
+    font-size: 16px; /* Increase font size */
+    margin: 4px 2px; /* Some margin */
+    cursor: pointer; /* Pointer/hand icon */
+    border-radius: 8px; /* Rounded corners */
+    transition: background-color 0.3s, transform 0.2s; /* Transition effects */
+
+}
+#submit_btn:hover {
+    background-color: #45a049; /* Darker green on hover */
+    transform: scale(1.05) rotate(5deg); /* Slightly enlarge on hover */
+    box-shadow: 0 0 10px #10de0c; /* добавляем легкую тень */
+}
+
+#submit_btn:active {
+    background-color: #3e8e41; /* Even darker green when clicked */
+    transform: scale(0.95); /* Slightly shrink when clicked */
+}
+
+.board{
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    align-items: center;
+}
+.boards{
+
+}
+
+#context-menu {
+            display: none;
+            position: absolute;
+            background-color: #fff;
+            color: black;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+            width: 150px;
+        }
+        #context-menu ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        #context-menu li {
+            padding: 10px;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+        #context-menu li:hover {
+            background-color: #f0f0f0;
+        }
+
+.styled-hr {
+    border: none;
+    height: 2px;
+    background-color: #0752ef; /* Цвет разделителя */
+    margin: 20px 0; /* Отступы сверху и снизу */
+    border-radius: 5px; /* Закругленные углы */
+    box-shadow: 0 0 5px #23d244;
+}
+
+

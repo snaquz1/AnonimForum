@@ -10,15 +10,7 @@
     <h1>Создание новой доски</h1>
     <form method="post" enctype="multipart/form-data">
     {% csrf_token %}
-    <input type="hidden" name="csrfmiddlewaretoken" value="pMqIqoiBovYK79f8SaAukOe9USfpHhc1QiR6FJ7oTPjJ2iqQc8V7DJYffuRc7JHU">
-    <p>
-    <label for="id_name">Имя доски:</label>
-    <input type="text" name="name" maxlength="120" required id="id_name">
-  </p>
-  <p>
-    <label for="id_image">Обложка доски:</label>
-    <input required type="file" name="image" id="id_image">
-  </p>
+    {{ form.as_p }}
     <input type="submit" value="send">
     </form>
 {% endblock %}

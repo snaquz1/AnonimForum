@@ -1,0 +1,19 @@
+#id_name{
+    background: #2b2b2b;
+    color: white;
+    font-size: 20px;
+    width: 30vh;
+}
+#id_name:focus {
+    background: #3c3c3c; /* немного светлее фон */
+    color: white; /* изменяем цвет текста на желтый */
+    border: 2px solid #053872; /* добавляем желтую рамку */
+    outline: none; /* убираем стандартный контур */
+    box-shadow: 0 0 50px #07458a; /* добавляем легкую тень */
+    transition: background 0.5s, color 0.5s, border 0.5s; /* добавляем плавный переход */
+}
+
+#id_image{
+    background: #2b2b2b;
+    color: white;
+}

@@ -38,9 +38,9 @@ body{
 .message-datetime {
     text-align: right; /* Align datetime text to the right */
     font-size: 15px; /* Font size for datetime */
-    padding-top: 30px; /* Space above datetime */
+    padding-top: 7vh; /* Space above datetime */
     color: #A9A9A9; /* Lighter color for datetime */
-}
+}z
 
 .message:hover {
     background: #00326B; /* Darker background on hover */
