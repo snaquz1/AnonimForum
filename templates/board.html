@@ -5,8 +5,8 @@
 {% block title %}Доска {{ board.name }}{% endblock %}
 
 {% block body %}
-    <img border="2px solid white" width="150" height="150" src="{{ board.image.url }}">
-    <h1>{{ board.name }}</h1>
+    <img id="boardimage" src="{{ board.image.url }}">
+    <a id="boardname" href="/boards/info/{{ board.id }}">{{ board.name }}</a>
     <hr class="styled-hr">
     {% for m in messages %}
         <div class="contextmenu-target-element message">

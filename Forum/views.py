@@ -19,7 +19,6 @@ def boardbyuuid(request, board_uuid):
     global board, messages
     if request.method == "POST":
         form = MessageForm(request.POST)
-        print(request.body)
         if form.is_valid():
             Message.objects.create(board=get_object_or_404(Board, uuid=board_uuid), text=form.cleaned_data["text"]).save()
             return HttpResponseRedirect(f"/boards/{board_uuid}")
@@ -32,8 +31,8 @@ def boardbyuuid(request, board_uuid):
     return render(request, "board.html", context={"form": form, "board": board, "messages": messages})
 
 
-def boardaction(request, action):
-    if request.method == "POST" and action == "create":
+def boardcreation(request):
+    if request.method == "POST":
         form = BoardCreationForm(request.POST, request.FILES)
         if form.is_valid():
             Board.objects.create(
@@ -41,8 +40,11 @@ def boardaction(request, action):
                 image=form.cleaned_data["image"]
             ).save()
             return redirect("/boards")
-
     else:
-        if action == "create":
-            form = BoardCreationForm()
-            return render(request, "boardcreation.html", context={"form": form})
+        form = BoardCreationForm()
+        return render(request, "boardcreation.html", context={"form": form})
+
+def boardinfo(request, board_id):
+    board = get_object_or_404(Board, id=board_id)
+    messages = Message.objects.filter(board_id=board.id).count()
+    return render(request, "boardinfo.html", context={"board": board, "messages": messages})

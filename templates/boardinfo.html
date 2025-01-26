@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Информация о доске{% endblock %}
+{% block style %}<link rel="stylesheet" href="{% static 'Forum/css/main.css' %}">{% endblock %}
+
+{% block body %}
+    <img id="boardimage" width="150" height="150" src="{{ board.image.url }}">
+    <h1>{{ board.name }}</h1>
+    <h2>Дата создания: {{ board.creation_date }}</h2>
+    <h3>Количество сообщений: {{ messages }}</h3>
+{% endblock %}

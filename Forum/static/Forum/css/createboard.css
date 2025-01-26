@@ -17,3 +17,29 @@
     background: #2b2b2b;
     color: white;
 }
+
+#submit_btn{
+    background-color: #4CAF50; /* Green background */
+    border: none; /* Remove borders */
+    color: white; /* White text */
+    padding: 15px 32px; /* Some padding */
+    text-align: center; /* Centered text */
+    text-decoration: none; /* No underline */
+    display: inline-block; /* Make the button inline */
+    font-size: 16px; /* Increase font size */
+    margin: 4px 2px; /* Some margin */
+    cursor: pointer; /* Pointer/hand icon */
+    border-radius: 8px; /* Rounded corners */
+    transition: background-color 0.3s, transform 0.2s; /* Transition effects */
+
+}
+#submit_btn:hover {
+    background-color: #45a049; /* Darker green on hover */
+    transform: scale(1.05) rotate(5deg); /* Slightly enlarge on hover */
+    box-shadow: 0 0 10px #10de0c; /* добавляем легкую тень */
+}
+
+#submit_btn:active {
+    background-color: #3e8e41; /* Even darker green when clicked */
+    transform: scale(0.95); /* Slightly shrink when clicked */
+}

@@ -6,7 +6,8 @@ urlpatterns = [
     path("", main),
     path("updates", updates),
     path("boards", boards),
-    re_path(r"^boards/(?P<action>create|delete)$", boardaction),
-    path("boards/<str:board_uuid>", boardbyuuid)
+    path("boards/create", boardcreation),
+    path("boards/<str:board_uuid>", boardbyuuid),
+    path("boards/info/<int:board_id>", boardinfo)
 
 ]

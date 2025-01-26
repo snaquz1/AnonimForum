@@ -4,6 +4,7 @@
     const submitBtn = document.getElementById("submit_btn");
 
     window.scrollTo(0, document.body.scrollHeight)
+    textInput.focus()
 
 function MainFunction(event){
     if (event === "Первый пункт"){
